@@ -270,7 +270,10 @@ if (enquiryForm) {
       ? 'Thank you for your submission' + (name ? ', ' + name : '') + '. We will review your information and get in touch with you shortly.'
       : 'Sorry, something went wrong and your details were not sent. Please try again in a moment.';
     result.hidden = false;
-    if (ok) enquiryForm.reset();
+    if (ok) {
+      window.location.href = 'thank-you.html';
+      return;
+    }
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     result.scrollIntoView({ behavior: reduce ? 'instant' : 'smooth', block: 'nearest' });
   });

@@ -210,3 +210,18 @@ a.reason:hover{transform:translateY(-3px)}
 .rate-badge span{color:var(--muted);font-weight:600;font-size:15px}
 .rate-badge strong{font-family:var(--serif);font-size:24px;color:var(--rust);font-weight:400;white-space:nowrap}
 .board-top>span:only-child{font-size:inherit;color:inherit;line-height:inherit}
+
+/* Legal and thank-you pages */
+.legal{max-width:760px;padding-top:56px}
+.legal h1{font-family:var(--serif);font-weight:400;font-size:clamp(40px,5vw,60px);letter-spacing:-1.5px;margin:10px 0 6px}
+.legal h2{font-family:var(--display);font-size:20px;margin:34px 0 10px}
+.legal p,.legal li{font-size:17px;line-height:1.75;color:var(--muted)}
+.legal ul{padding-left:22px;margin:10px 0}
+.legal-updated{font-size:14px!important;margin:0 0 24px}
+.legal-note{margin-top:34px;padding:16px 18px;background:#f3efe4;border-radius:10px;font-size:15px!important}
+.thanks{min-height:56vh;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.thanks h1{font-family:var(--serif);font-weight:400;font-size:clamp(44px,6vw,76px);line-height:1.02;letter-spacing:-2px;margin:10px 0 18px}
+.thanks h1 em{color:var(--rust)}
+.thanks-lead{font-size:20px;line-height:1.6;color:var(--muted);max-width:520px;margin:0 0 28px}
+.footer-bottom a{text-decoration:underline;text-underline-offset:3px}
+.legal h2{letter-spacing:0;word-spacing:normal;font-weight:700}
