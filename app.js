@@ -306,3 +306,47 @@ if (attachmentDialog) {
 
 const year = document.getElementById('year');
 if (year) year.textContent = String(new Date().getFullYear());
+
+(function earningsSlider() {
+  const slider = document.getElementById('example-hours');
+  const badge = document.querySelector('.rate-badge');
+  const total = document.getElementById('earnings-total');
+  if (!slider || !badge || !total) return;
+  const out = document.getElementById('hours-out');
+  const yearEl = document.getElementById('earnings-year');
+  const rate = Number(badge.dataset.rate);
+  function render() {
+    const hours = Number(slider.value);
+    const weekly = rate * hours;
+    out.textContent = hours + ' hours';
+    slider.style.setProperty('--pct', ((hours - slider.min) / (slider.max - slider.min) * 100) + '%');
+    total.textContent = formatCad(Math.round(weekly * 52 / 12));
+    yearEl.textContent = 'Leave your evenings empty and that is ' + formatCad(weekly * 52) + ' a year you never see.';
+  }
+  slider.addEventListener('input', render);
+  render();
+})();
+
+(function navAndSticky() {
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.getElementById('site-nav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+    nav.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => {
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }));
+  }
+  const sticky = document.querySelector('.sticky-cta');
+  const form = document.getElementById('enquire');
+  if (sticky && form) {
+    let formVisible = false;
+    const update = () => { sticky.hidden = formVisible || window.scrollY < 500; };
+    new IntersectionObserver((entries) => { formVisible = entries[0].isIntersecting; update(); }).observe(form);
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  }
+})();
