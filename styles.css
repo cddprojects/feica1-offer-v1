@@ -230,3 +230,5 @@ a.reason:hover{transform:translateY(-3px)}
 .back-top{margin-left:auto;font-size:15px;font-weight:600;color:var(--ink);text-decoration:underline;text-underline-offset:4px;white-space:nowrap}
 .back-top:hover{color:var(--rust)}
 @media(max-width:700px){.back-top{margin-left:0}}
+
+@media(max-width:800px){.site-header nav a[href="#why"],.site-header nav a[href="#chat"]{display:none}}
