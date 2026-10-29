@@ -123,3 +123,15 @@ a.reason:hover{transform:translateY(-3px)}
 @media(max-width:900px){.review-list{grid-template-columns:1fr}.chat-tag{margin-left:0}}
 
 #chat .chat-demo+.chat-demo{margin-top:18px}
+
+/* Header nav stays reachable on small screens as a scrollable row. */
+.hero-actions{flex-wrap:nowrap;align-items:center}
+.hero-actions .button{white-space:nowrap}
+@media(max-width:800px){
+  .site-header{height:auto;flex-wrap:wrap;row-gap:6px;padding-top:14px;padding-bottom:10px}
+  .site-header nav{display:flex;order:3;width:100%;gap:18px;overflow-x:auto;white-space:nowrap;scrollbar-width:none;padding-bottom:4px}
+  .site-header nav::-webkit-scrollbar{display:none}
+  .site-header nav a{font-size:14px;min-height:36px;display:inline-flex;align-items:center}
+}
+@media(max-width:420px){.hero-actions{flex-wrap:wrap;row-gap:14px}}
+.hero-actions .text-link{white-space:nowrap}
