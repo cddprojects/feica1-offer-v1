@@ -46,8 +46,34 @@ function scheduleFromPage() {
   return readStoredSchedule() || 'evenings';
 }
 
-function stampApplyLinks(key) {
-  const href = `apply.html?hours=${encodeURIComponent(key)}`;
+const GOAL_KEY = 'worknest-goal';
+const goalPresets = { home: 10000, debt: 5000, getaway: 3000, trip: 3000, business: 5000, other: 2000 };
+
+function currentGoal() {
+  const requested = new URLSearchParams(location.search).get('goal');
+  if (goalPresets[requested]) return requested;
+  try {
+    const stored = localStorage.getItem(GOAL_KEY);
+    if (goalPresets[stored]) return stored;
+  } catch (error) {
+    /* Storage can be blocked. */
+  }
+  return 'home';
+}
+
+function storeGoal(goal) {
+  try {
+    localStorage.setItem(GOAL_KEY, goal);
+  } catch (error) {
+    /* Ignore quota and privacy errors. */
+  }
+}
+
+let activeSchedule = 'evenings';
+let activeGoal = currentGoal();
+
+function stampApplyLinks() {
+  const href = `apply.html?hours=${encodeURIComponent(activeSchedule)}&goal=${encodeURIComponent(activeGoal)}`;
   document.querySelectorAll('[data-apply-link]').forEach((link) => {
     link.setAttribute('href', href);
   });
@@ -91,7 +117,8 @@ function selectSchedule(key, persist) {
     }
   }
 
-  stampApplyLinks(key);
+  activeSchedule = key;
+  stampApplyLinks();
 }
 
 function formatCad(amount) {
@@ -140,6 +167,58 @@ function renderEarnings() {
   }
 }
 
+function renderGoal() {
+  const result = document.getElementById('goal-result');
+  const amountInput = document.getElementById('goal-amount');
+  const rateField = document.getElementById('example-rate');
+  const hoursField = document.getElementById('example-hours');
+  if (!result || !amountInput || !rateField || !hoursField) return;
+
+  const amount = readNonNegative(amountInput);
+  const rate = readNonNegative(rateField);
+  const hours = readNonNegative(hoursField);
+
+  if (amount === null || rate === null || hours === null) {
+    result.textContent = 'Enter a goal, a rate and weekly hours of zero or more to see how long it could take.';
+    return;
+  }
+  const weekly = rate * hours;
+  if (weekly <= 0) {
+    result.textContent = 'At zero paid hours there is no income to plan with. Add some hours to see a timeline.';
+    return;
+  }
+  const weeks = Math.max(1, Math.ceil(amount / weekly));
+  const months = weeks >= 8 ? ` (about ${Math.round(weeks / 4.345)} months)` : '';
+  result.textContent = `At ${formatCad(weekly)} a week, ${formatCad(amount)} takes about ${weeks} week${weeks === 1 ? '' : 's'}${months}, before taxes.`;
+}
+
+const goalSelect = document.getElementById('goal');
+const goalAmount = document.getElementById('goal-amount');
+if (goalSelect && goalAmount) {
+  activeGoal = currentGoal();
+  goalSelect.value = activeGoal;
+  goalAmount.value = String(goalPresets[activeGoal]);
+  goalSelect.addEventListener('change', () => {
+    activeGoal = goalSelect.value;
+    goalAmount.value = String(goalPresets[activeGoal]);
+    storeGoal(activeGoal);
+    stampApplyLinks();
+    renderGoal();
+  });
+  goalAmount.addEventListener('input', renderGoal);
+}
+
+const goalField = document.getElementById('goal-field');
+if (goalField) {
+  activeGoal = currentGoal();
+  goalField.value = activeGoal;
+  goalField.addEventListener('change', () => {
+    activeGoal = goalField.value;
+    storeGoal(activeGoal);
+    stampApplyLinks();
+  });
+}
+
 if (document.querySelector('[data-schedule], #availability, [data-schedule-label], [data-apply-link]')) {
   selectSchedule(scheduleFromPage(), false);
 }
@@ -156,9 +235,10 @@ if (availabilityField) {
 const rateInput = document.getElementById('example-rate');
 const hoursInput = document.getElementById('example-hours');
 if (rateInput && hoursInput) {
-  rateInput.addEventListener('input', renderEarnings);
-  hoursInput.addEventListener('input', renderEarnings);
+  rateInput.addEventListener('input', () => { renderEarnings(); renderGoal(); });
+  hoursInput.addEventListener('input', () => { renderEarnings(); renderGoal(); });
   renderEarnings();
+  renderGoal();
 }
 
 const enquiryForm = document.getElementById('enquiry-form');

@@ -86,8 +86,8 @@ a.reason{color:inherit;transition:transform .2s}
 a.reason:hover{transform:translateY(-3px)}
 .reason.note{background:#f3efe4}
 @media(min-width:581px){
-  a.reason{display:flex;flex-direction:column}
-  a.reason .reason-bottom{margin-top:auto}
+  a.reason,.page-grid .reason{display:flex;flex-direction:column}
+  a.reason .reason-bottom,.page-grid .reason .reason-bottom{margin-top:auto}
 }
 .faq-list a{color:var(--rust);text-decoration:underline;text-underline-offset:3px}
 .page-cta{padding-top:72px;padding-bottom:88px}
