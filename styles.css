@@ -186,9 +186,9 @@ a.reason:hover{transform:translateY(-3px)}
   .site-header .button.small{padding-inline:11px}
   .site-header .button.small span{display:none}
 }
-@media(max-width:370px){.site-header nav a[href="#how"]{display:none}}
+@media(max-width:370px){.site-header nav a[href$="#how"]{display:none}}
 @media(max-width:480px){.site-header .button.small{white-space:nowrap;font-size:11px;padding-inline:10px;min-height:38px}}
-@media(max-width:420px){.site-header nav a[href="#how"]{display:none}}
+@media(max-width:420px){.site-header nav a[href$="#how"]{display:none}}
 @media(max-width:360px){.site-header .brand{font-size:15px}.site-header .brand svg{width:26px;height:26px}.site-header nav a{font-size:12px}.site-header .button.small{padding-inline:8px;font-size:10.5px}}
 
 /* Hours slider */
@@ -231,10 +231,10 @@ a.reason:hover{transform:translateY(-3px)}
 .back-top:hover{color:var(--rust)}
 @media(max-width:700px){.back-top{margin-left:0}}
 
-@media(max-width:800px){.site-header nav a[href="#why"],.site-header nav a[href="#chat"]{display:none}}
+@media(max-width:800px){.site-header nav a[href$="#why"],.site-header nav a[href$="#chat"]{display:none}}
 .site-footer .back-top{order:3;flex:0 0 100%;margin-left:0;text-align:right;padding-top:14px}
 @media(max-width:700px){.site-footer .back-top{text-align:left}}
-@media(max-width:800px){.site-header nav a[href="#enquire"]{display:none}}
+@media(max-width:800px){.site-header nav a[href$="#enquire"]{display:none}}
 .site-footer .back-top{order:initial;flex:0 0 auto;margin-left:auto;padding-top:0;text-align:right;align-self:flex-start}
 @media(max-width:700px){.site-footer .back-top{margin-left:0;text-align:left}}
 @media(max-width:800px){.site-footer{padding-bottom:86px}}
