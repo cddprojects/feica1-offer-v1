@@ -186,9 +186,9 @@ a.reason:hover{transform:translateY(-3px)}
   .site-header .button.small{padding-inline:11px}
   .site-header .button.small span{display:none}
 }
-@media(max-width:370px){.site-header nav a[href="#services"]{display:none}}
+@media(max-width:370px){.site-header nav a[href="#how"]{display:none}}
 @media(max-width:480px){.site-header .button.small{white-space:nowrap;font-size:11px;padding-inline:10px;min-height:38px}}
-@media(max-width:420px){.site-header nav a[href="#services"]{display:none}}
+@media(max-width:420px){.site-header nav a[href="#how"]{display:none}}
 @media(max-width:360px){.site-header .brand{font-size:15px}.site-header .brand svg{width:26px;height:26px}.site-header nav a{font-size:12px}.site-header .button.small{padding-inline:8px;font-size:10.5px}}
 
 /* Hours slider */
