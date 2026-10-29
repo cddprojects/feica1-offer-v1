@@ -121,3 +121,5 @@ a.reason:hover{transform:translateY(-3px)}
 .msg.in{background:#fff;align-self:flex-start;border-top-left-radius:2px}
 .msg.out{background:#d9fdd3;align-self:flex-end;border-top-right-radius:2px}
 @media(max-width:900px){.review-list{grid-template-columns:1fr}.chat-tag{margin-left:0}}
+
+#chat .chat-demo+.chat-demo{margin-top:18px}
