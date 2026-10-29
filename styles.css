@@ -238,3 +238,5 @@ a.reason:hover{transform:translateY(-3px)}
 .site-footer .back-top{order:initial;flex:0 0 auto;margin-left:auto;padding-top:0;text-align:right;align-self:flex-start}
 @media(max-width:700px){.site-footer .back-top{margin-left:0;text-align:left}}
 @media(max-width:800px){.site-footer{padding-bottom:86px}}
+
+.feedback-empty{grid-column:1/-1;margin:0;padding:20px 22px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--muted);font-size:16px}

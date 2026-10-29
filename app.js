@@ -318,7 +318,8 @@ const REVIEWS = [];
     { name: 'Reviewer name', place: 'Province', stars: 4, text: 'Sample layout only. Longer reviews wrap onto several lines like this, so a full paragraph of feedback still reads well in the card.', sample: true },
     { name: 'Reviewer name', place: 'Province', stars: 2, text: 'Sample layout only. Mixed and critical reviews sit beside the good ones.', sample: true }
   ] : []);
-  if (!items.length) return;
+  if (!items.length) { section.hidden = false; return; }
+  list.replaceChildren();
   items.forEach((r) => {
     const card = document.createElement('article');
     card.className = 'review' + (r.sample ? ' review-sample' : '');
