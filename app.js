@@ -69,15 +69,7 @@ function storeGoal(goal) {
   }
 }
 
-let activeSchedule = 'evenings';
 let activeGoal = currentGoal();
-
-function stampApplyLinks() {
-  const href = `apply.html?hours=${encodeURIComponent(activeSchedule)}&goal=${encodeURIComponent(activeGoal)}`;
-  document.querySelectorAll('[data-apply-link]').forEach((link) => {
-    link.setAttribute('href', href);
-  });
-}
 
 function selectSchedule(key, persist) {
   const content = scheduleContent[key];
@@ -111,14 +103,8 @@ function selectSchedule(key, persist) {
 
   if (persist) {
     writeStoredSchedule(key);
-    if (document.body.dataset.page === 'apply' || document.body.dataset.page === 'availability') {
-      const next = `${location.pathname}?hours=${encodeURIComponent(key)}${location.hash}`;
-      history.replaceState(null, '', next);
-    }
   }
 
-  activeSchedule = key;
-  stampApplyLinks();
 }
 
 function formatCad(amount) {
@@ -209,6 +195,7 @@ function renderGoal() {
   result.textContent = `At ${formatCad(weekly)} a week, ${formatCad(amount)} takes about ${weeks} week${weeks === 1 ? '' : 's'}${months}, before taxes.`;
 }
 
+const goalField = document.getElementById('goal-field');
 const goalSelect = document.getElementById('goal');
 const goalAmount = document.getElementById('goal-amount');
 if (goalSelect && goalAmount) {
@@ -219,24 +206,27 @@ if (goalSelect && goalAmount) {
     activeGoal = goalSelect.value;
     goalAmount.value = String(goalPresets[activeGoal]);
     storeGoal(activeGoal);
-    stampApplyLinks();
+    if (goalField) goalField.value = activeGoal;
     renderGoal();
   });
   goalAmount.addEventListener('input', renderGoal);
 }
 
-const goalField = document.getElementById('goal-field');
 if (goalField) {
   activeGoal = currentGoal();
   goalField.value = activeGoal;
   goalField.addEventListener('change', () => {
     activeGoal = goalField.value;
     storeGoal(activeGoal);
-    stampApplyLinks();
+    if (goalSelect && goalAmount) {
+      goalSelect.value = activeGoal;
+      goalAmount.value = String(goalPresets[activeGoal]);
+      renderGoal();
+    }
   });
 }
 
-if (document.querySelector('[data-schedule], #availability, [data-schedule-label], [data-apply-link]')) {
+if (document.querySelector('[data-schedule], #availability, [data-schedule-label]')) {
   selectSchedule(scheduleFromPage(), false);
 }
 
