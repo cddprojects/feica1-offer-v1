@@ -267,7 +267,7 @@ if (enquiryForm) {
     }
     const name = (document.getElementById('first-name').value || '').trim().split(' ')[0];
     result.textContent = ok
-      ? 'Thanks' + (name ? ', ' + name : '') + '. We have your details. If a role fits your skills and hours, we will be in touch.'
+      ? 'Thank you for your submission' + (name ? ', ' + name : '') + '. We will review your information and get in touch with you shortly.'
       : 'Sorry, something went wrong and your details were not sent. Please try again in a moment.';
     result.hidden = false;
     if (ok) enquiryForm.reset();
