@@ -324,6 +324,7 @@ const REVIEWS = [];
     const hours = Number(slider.value);
     const weekly = rate * hours;
     out.textContent = hours + ' hours';
+    slider.style.setProperty('--pct', ((hours - slider.min) / (slider.max - slider.min) * 100) + '%');
     total.textContent = formatCad(Math.round(weekly * 52 / 12));
     yearEl.textContent = 'Leave your evenings empty and that is ' + formatCad(weekly * 52) + ' a year you never see.';
     note.textContent = 'Example: ' + active.dataset.role + ' at CAD $' + rate + ' an hour, before taxes. The company sets the real rate for each opening.';

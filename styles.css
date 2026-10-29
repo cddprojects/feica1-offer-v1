@@ -190,3 +190,18 @@ a.reason:hover{transform:translateY(-3px)}
 @media(max-width:480px){.site-header .button.small{white-space:nowrap;font-size:11px;padding-inline:10px;min-height:38px}}
 @media(max-width:420px){.site-header nav a[href="#services"]{display:none}}
 @media(max-width:360px){.site-header .brand{font-size:15px}.site-header .brand svg{width:26px;height:26px}.site-header nav a{font-size:12px}.site-header .button.small{padding-inline:8px;font-size:10.5px}}
+
+/* Hours slider */
+.hours-slider{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 22px 16px;max-width:520px;box-shadow:0 8px 24px rgba(24,46,59,.06)}
+.hours-head{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:18px}
+.hours-head label{font-weight:600;font-size:15px;line-height:1.3;color:var(--muted);margin:0}
+.hours-head output{flex:none;white-space:nowrap;background:var(--ink);color:#fff;font:700 20px var(--sans);padding:6px 14px;border-radius:99px;font-variant-numeric:tabular-nums}
+.hours-slider input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:10px;border-radius:99px;background:linear-gradient(to right,var(--rust) 0,var(--rust) var(--pct,14%),#e6e0d3 var(--pct,14%),#e6e0d3 100%);outline:none;margin:6px 0 0;cursor:pointer}
+.hours-slider input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:30px;border-radius:50%;background:#fff;border:3px solid var(--rust);box-shadow:0 3px 10px rgba(24,46,59,.25);transition:transform .15s}
+.hours-slider input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:#fff;border:3px solid var(--rust);box-shadow:0 3px 10px rgba(24,46,59,.25)}
+.hours-slider input[type=range]::-moz-range-track{background:transparent}
+.hours-slider input[type=range]:active::-webkit-slider-thumb{transform:scale(1.12)}
+.hours-scale{position:relative;height:22px;margin:12px 15px 0;color:var(--muted);font-size:13px}
+.hours-scale span{position:absolute;top:0;transform:translateX(-50%)}
+.hours-scale span:first-child{transform:none}
+.hours-scale span:last-child{transform:translateX(-100%)}
