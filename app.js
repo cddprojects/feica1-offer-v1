@@ -167,6 +167,23 @@ function renderEarnings() {
   }
 }
 
+function renderYear() {
+  const rateField = document.getElementById('example-rate');
+  const hoursField = document.getElementById('example-hours');
+  if (!rateField || !hoursField) return;
+  const rate = readNonNegative(rateField);
+  const hours = readNonNegative(hoursField);
+  const valid = rate !== null && hours !== null;
+  const text = valid ? formatCad(rate * hours * 52) : '\u2014';
+  document.querySelectorAll('[data-year-total]').forEach((el) => { el.textContent = text; });
+  const wait = document.getElementById('wait-cost');
+  if (wait) {
+    wait.innerHTML = valid && rate * hours > 0
+      ? `<strong>Every year you wait costs this plan about ${text}.</strong>`
+      : '<strong>Add a rate and paid hours to see what waiting costs.</strong>';
+  }
+}
+
 function renderGoal() {
   const result = document.getElementById('goal-result');
   const amountInput = document.getElementById('goal-amount');
@@ -235,10 +252,11 @@ if (availabilityField) {
 const rateInput = document.getElementById('example-rate');
 const hoursInput = document.getElementById('example-hours');
 if (rateInput && hoursInput) {
-  rateInput.addEventListener('input', () => { renderEarnings(); renderGoal(); });
-  hoursInput.addEventListener('input', () => { renderEarnings(); renderGoal(); });
+  rateInput.addEventListener('input', () => { renderEarnings(); renderGoal(); renderYear(); });
+  hoursInput.addEventListener('input', () => { renderEarnings(); renderGoal(); renderYear(); });
   renderEarnings();
   renderGoal();
+  renderYear();
 }
 
 const enquiryForm = document.getElementById('enquiry-form');
