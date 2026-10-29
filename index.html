@@ -107,8 +107,8 @@
         </div>
         <div class="form-card">
           <div class="form-card-head"><h3>Start earning from home.</h3></div>
-          <p class="form-intro">Complete your application details. Preview only—nothing is sent. <span data-schedule-label>Your preference: evenings</span></p>
-          <form id="enquiry-form">
+          <p class="form-intro">Tell us a little about you and when you’re free. <span data-schedule-label>Your preference: evenings</span></p>
+          <form id="enquiry-form" data-endpoint="">
             <div class="field"><label for="first-name">Name</label><input id="first-name" name="name" autocomplete="name" placeholder="Your name" required maxlength="120"></div>
             <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.ca" required maxlength="254"></div>
             <div class="field">
@@ -163,7 +163,6 @@
               </select>
             </div>
             <button type="submit" class="button form-submit">Start earning from home <span aria-hidden="true">↗</span></button>
-            <p class="form-fineprint">This demo does not submit an application or create an account.</p>
             <div id="form-result" role="status" hidden></div>
           </form>
         </div>
@@ -251,7 +250,7 @@
         </details>
         <details>
           <summary>Do I need a phone call to apply?<span aria-hidden="true">+</span></summary>
-          <p>No. Complete the online application form with your details and preferred hours. This preview form does not send your application yet.</p>
+          <p>No. Complete the online application form with your details and preferred hours.</p>
         </details>
       </div>
     </section>

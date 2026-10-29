@@ -242,12 +242,35 @@ if (rateInput && hoursInput) {
 
 const enquiryForm = document.getElementById('enquiry-form');
 if (enquiryForm) {
-  enquiryForm.addEventListener('submit', (event) => {
+  enquiryForm.addEventListener('submit', async (event) => {
     event.preventDefault();
     const result = document.getElementById('form-result');
+    const button = enquiryForm.querySelector('button[type="submit"]');
     if (!result) return;
-    result.textContent = 'Preview complete. In the live service, this is where you would receive the next steps. This demo has not sent or saved your details.';
+    const endpoint = enquiryForm.dataset.endpoint;
+    let ok = true;
+    if (endpoint) {
+      if (button) button.disabled = true;
+      try {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(Object.fromEntries(new FormData(enquiryForm)))
+        });
+        ok = response.ok;
+      } catch (error) {
+        ok = false;
+      }
+      if (button) button.disabled = false;
+    } else {
+      console.warn('No data-endpoint is set on #enquiry-form, so this submission was not stored.');
+    }
+    const name = (document.getElementById('first-name').value || '').trim().split(' ')[0];
+    result.textContent = ok
+      ? 'Thanks' + (name ? ', ' + name : '') + '. We have your details. If a role fits your skills and hours, we will be in touch.'
+      : 'Sorry, something went wrong and your details were not sent. Please try again in a moment.';
     result.hidden = false;
+    if (ok) enquiryForm.reset();
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     result.scrollIntoView({ behavior: reduce ? 'instant' : 'smooth', block: 'nearest' });
   });
