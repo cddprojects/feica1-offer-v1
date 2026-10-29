@@ -280,3 +280,32 @@ if (attachmentDialog) {
 
 const year = document.getElementById('year');
 if (year) year.textContent = String(new Date().getFullYear());
+
+const REVIEWS = [];
+(function renderReviews() {
+  const section = document.getElementById('reviews');
+  const list = document.getElementById('review-list');
+  if (!section || !list) return;
+  const demo = new URLSearchParams(location.search).has('reviews-demo');
+  const items = REVIEWS.length ? REVIEWS : (demo ? [
+    { name: 'Reviewer name', place: 'Province', stars: 5, text: 'Sample layout only. A real review goes here.', sample: true },
+    { name: 'Reviewer name', place: 'Province', stars: 4, text: 'Sample layout only. Longer reviews wrap onto several lines like this, so a full paragraph of feedback still reads well in the card.', sample: true },
+    { name: 'Reviewer name', place: 'Province', stars: 2, text: 'Sample layout only. Mixed and critical reviews sit beside the good ones.', sample: true }
+  ] : []);
+  if (!items.length) return;
+  items.forEach((r) => {
+    const card = document.createElement('article');
+    card.className = 'review' + (r.sample ? ' review-sample' : '');
+    const stars = '\u2605'.repeat(r.stars) + '\u2606'.repeat(5 - r.stars);
+    card.innerHTML = '<div class="review-top"><span class="review-avatar"></span><div><strong></strong><small></small></div></div><p class="review-stars" aria-label=""></p><p class="review-text"></p>';
+    card.querySelector('.review-avatar').textContent = (r.name || '?').charAt(0);
+    card.querySelector('strong').textContent = r.name;
+    card.querySelector('small').textContent = r.place || '';
+    const st = card.querySelector('.review-stars');
+    st.textContent = stars;
+    st.setAttribute('aria-label', r.stars + ' out of 5 stars');
+    card.querySelector('.review-text').textContent = r.text;
+    list.appendChild(card);
+  });
+  section.hidden = false;
+})();
