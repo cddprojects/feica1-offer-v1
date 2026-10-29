@@ -61,11 +61,10 @@ body{font-size:var(--body-text-size)}
 .footer-top{align-items:flex-start}
 .steps a{color:var(--rust);text-decoration:underline;text-underline-offset:3px}
 @media(max-width:1000px){
-  .site-header{height:auto;flex-wrap:wrap;align-items:center;padding-top:18px;padding-bottom:18px;row-gap:12px}
-  .site-header nav{display:flex;flex-wrap:wrap;order:3;width:100%;gap:4px 18px}
+  .site-header nav{gap:14px}
+  .site-header nav a{font-size:13px;white-space:nowrap}
 }
 @media(max-width:800px){
-  .site-header nav a{display:inline-flex;align-items:center;min-height:44px}
   .footer-links{width:100%}
 }
 
