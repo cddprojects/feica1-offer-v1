@@ -197,19 +197,14 @@ function renderGoal() {
 
 const goalField = document.getElementById('goal-field');
 const goalSelect = document.getElementById('goal');
-const goalAmount = document.getElementById('goal-amount');
-if (goalSelect && goalAmount) {
+if (goalSelect) {
   activeGoal = currentGoal();
   goalSelect.value = activeGoal;
-  goalAmount.value = String(goalPresets[activeGoal]);
   goalSelect.addEventListener('change', () => {
     activeGoal = goalSelect.value;
-    goalAmount.value = String(goalPresets[activeGoal]);
     storeGoal(activeGoal);
     if (goalField) goalField.value = activeGoal;
-    renderGoal();
   });
-  goalAmount.addEventListener('input', renderGoal);
 }
 
 if (goalField) {
@@ -218,11 +213,7 @@ if (goalField) {
   goalField.addEventListener('change', () => {
     activeGoal = goalField.value;
     storeGoal(activeGoal);
-    if (goalSelect && goalAmount) {
-      goalSelect.value = activeGoal;
-      goalAmount.value = String(goalPresets[activeGoal]);
-      renderGoal();
-    }
+    if (goalSelect) goalSelect.value = activeGoal;
   });
 }
 
