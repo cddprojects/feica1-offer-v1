@@ -47,3 +47,12 @@ Rule: say one true, plain thing a person would say over coffee, then tie it to a
 - Check before you commit. Ask for duties, hours and pay in writing.
 
 Claims to avoid: guaranteed income, "quit your job", "easy money", named earnings as typical, any bonus or reward not tied to a named employer.
+
+## The six "why you need a second job" reasons and their sources
+
+1. One employer holds your whole income. This is a reasoning point and carries no statistic.
+2. Prices rise faster than most raises. Canada's annual average CPI rose 2.1% in 2025 ([Canada.ca, 24 Mar 2026](https://www.canada.ca/en/employment-social-development/news/2026/03/government-of-canada-raises-the-federal-minimum-wage.html)). Wording: "a raise smaller than that is a pay cut."
+3. A goal needs a price and a date. This is the calculator's own maths (rate × hours), not a statistic.
+4. A second job is a free trial of a new career. About 14.5% of multiple jobholders did it for work they were passionate about, and 34.8% for extra income ([Statistics Canada, 2023](https://www150.statcan.gc.ca/n1/pub/14-28-0001/2024001/article/00002-eng.htm)).
+5. Walk-away money gives leverage. This is a reasoning point and carries no statistic.
+6. Remote work removes the commute. 10 hours a week × 52 weeks = 520 hours. This is arithmetic.

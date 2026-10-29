@@ -47,7 +47,7 @@ function scheduleFromPage() {
 }
 
 const GOAL_KEY = 'worknest-goal';
-const goalPresets = { home: 10000, debt: 5000, getaway: 3000, trip: 3000, business: 5000, other: 2000 };
+const goalPresets = { home: 10000, debt: 5000, safety: 8000, getaway: 3000, business: 5000, other: 2000 };
 
 function currentGoal() {
   const requested = new URLSearchParams(location.search).get('goal');
