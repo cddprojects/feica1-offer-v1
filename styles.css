@@ -225,3 +225,8 @@ a.reason:hover{transform:translateY(-3px)}
 .thanks-lead{font-size:20px;line-height:1.6;color:var(--muted);max-width:520px;margin:0 0 28px}
 .footer-bottom a{text-decoration:underline;text-underline-offset:3px}
 .legal h2{letter-spacing:0;word-spacing:normal;font-weight:700}
+
+.site-footer .footer-bottom{display:flex;flex-wrap:wrap;align-items:flex-start;gap:12px 40px}
+.back-top{margin-left:auto;font-size:15px;font-weight:600;color:var(--ink);text-decoration:underline;text-underline-offset:4px;white-space:nowrap}
+.back-top:hover{color:var(--rust)}
+@media(max-width:700px){.back-top{margin-left:0}}
