@@ -309,3 +309,54 @@ const REVIEWS = [];
   });
   section.hidden = false;
 })();
+
+(function earningsSlider() {
+  const slider = document.getElementById('example-hours');
+  const options = document.querySelectorAll('.rate-option');
+  const total = document.getElementById('earnings-total');
+  if (!slider || !options.length || !total) return;
+  const out = document.getElementById('hours-out');
+  const yearEl = document.getElementById('earnings-year');
+  const note = document.getElementById('earnings-note');
+  let active = document.querySelector('.rate-option.active') || options[0];
+  function render() {
+    const rate = Number(active.dataset.rate);
+    const hours = Number(slider.value);
+    const weekly = rate * hours;
+    out.textContent = hours + ' hours';
+    total.textContent = formatCad(Math.round(weekly * 52 / 12));
+    yearEl.textContent = 'Leave your evenings empty and that is ' + formatCad(weekly * 52) + ' a year you never see.';
+    note.textContent = 'Example: ' + active.dataset.role + ' at CAD $' + rate + ' an hour, before taxes. The company sets the real rate for each opening.';
+  }
+  options.forEach((option) => option.addEventListener('click', () => {
+    active = option;
+    options.forEach((o) => { o.classList.toggle('active', o === option); o.setAttribute('aria-pressed', String(o === option)); });
+    render();
+  }));
+  slider.addEventListener('input', render);
+  render();
+})();
+
+(function navAndSticky() {
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.getElementById('site-nav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+    nav.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => {
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }));
+  }
+  const sticky = document.querySelector('.sticky-cta');
+  const form = document.getElementById('enquire');
+  if (sticky && form) {
+    let formVisible = false;
+    const update = () => { sticky.hidden = formVisible || window.scrollY < 500; };
+    new IntersectionObserver((entries) => { formVisible = entries[0].isIntersecting; update(); }).observe(form);
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  }
+})();
