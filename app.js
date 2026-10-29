@@ -312,28 +312,20 @@ const REVIEWS = [];
 
 (function earningsSlider() {
   const slider = document.getElementById('example-hours');
-  const options = document.querySelectorAll('.rate-option');
+  const badge = document.querySelector('.rate-badge');
   const total = document.getElementById('earnings-total');
-  if (!slider || !options.length || !total) return;
+  if (!slider || !badge || !total) return;
   const out = document.getElementById('hours-out');
   const yearEl = document.getElementById('earnings-year');
-  const note = document.getElementById('earnings-note');
-  let active = document.querySelector('.rate-option.active') || options[0];
+  const rate = Number(badge.dataset.rate);
   function render() {
-    const rate = Number(active.dataset.rate);
     const hours = Number(slider.value);
     const weekly = rate * hours;
     out.textContent = hours + ' hours';
     slider.style.setProperty('--pct', ((hours - slider.min) / (slider.max - slider.min) * 100) + '%');
     total.textContent = formatCad(Math.round(weekly * 52 / 12));
     yearEl.textContent = 'Leave your evenings empty and that is ' + formatCad(weekly * 52) + ' a year you never see.';
-    note.textContent = 'Example: ' + active.dataset.role + ' at CAD $' + rate + ' an hour, before taxes. The company sets the real rate for each opening.';
   }
-  options.forEach((option) => option.addEventListener('click', () => {
-    active = option;
-    options.forEach((o) => { o.classList.toggle('active', o === option); o.setAttribute('aria-pressed', String(o === option)); });
-    render();
-  }));
   slider.addEventListener('input', render);
   render();
 })();

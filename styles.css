@@ -205,3 +205,8 @@ a.reason:hover{transform:translateY(-3px)}
 .hours-scale span{position:absolute;top:0;transform:translateX(-50%)}
 .hours-scale span:first-child{transform:none}
 .hours-scale span:last-child{transform:translateX(-100%)}
+
+.rate-badge{display:flex;align-items:baseline;justify-content:space-between;gap:12px;max-width:520px;margin:0 0 16px;padding:14px 20px;background:#fff7f3;border:1px solid #e9cfc4;border-radius:14px}
+.rate-badge span{color:var(--muted);font-weight:600;font-size:15px}
+.rate-badge strong{font-family:var(--serif);font-size:24px;color:var(--rust);font-weight:400;white-space:nowrap}
+.board-top>span:only-child{font-size:inherit;color:inherit;line-height:inherit}
