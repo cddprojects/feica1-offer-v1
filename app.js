@@ -271,7 +271,7 @@ if (enquiryForm) {
       : 'Sorry, something went wrong and your details were not sent. Please try again in a moment.';
     result.hidden = false;
     if (ok) {
-      window.location.href = 'thank-you/';
+      window.location.href = '/thank-you/';
       return;
     }
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

@@ -7,16 +7,16 @@
   <meta name="robots" content="noindex">
   <meta name="description" content="How Role Glide collects, uses and protects your personal information.">
   <title>Privacy Policy | Role Glide</title>
-  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../styles.css">
-  <script src="../app.js" defer></script>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header wrap">
-    <a class="brand" href="../" aria-label="Role Glide home"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M5 19c7 12 23 12 30 0M8 25c7 10 17 10 24 0M12 31c5 5 11 5 16 0M12 9l8 9 8-9M20 18V5"/></svg><span>Role Glide</span></a>
-    <nav id="site-nav" aria-label="Main navigation"><a href="../#why">Why a side job</a><a href="../#earnings">Earnings</a><a href="../#how">How to start</a><a href="../#faq">FAQs</a></nav>
-    <a class="button small" href="../#enquire">Apply now <span aria-hidden="true">↗</span></a>
+    <a class="brand" href="/" aria-label="Role Glide home"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M5 19c7 12 23 12 30 0M8 25c7 10 17 10 24 0M12 31c5 5 11 5 16 0M12 9l8 9 8-9M20 18V5"/></svg><span>Role Glide</span></a>
+    <nav id="site-nav" aria-label="Main navigation"><a href="/#why">Why a side job</a><a href="/#earnings">Earnings</a><a href="/#how">How to start</a><a href="/#faq">FAQs</a></nav>
+    <a class="button small" href="/#enquire">Apply now <span aria-hidden="true">↗</span></a>
   </header>
   <main id="main">
     <section class="legal wrap section-space" aria-labelledby="privacy-title">
@@ -88,8 +88,8 @@
   </main>
   <footer class="site-footer wrap">
     <div class="footer-top">
-      <a class="brand" href="../"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M5 19c7 12 23 12 30 0M8 25c7 10 17 10 24 0M12 31c5 5 11 5 16 0M12 9l8 9 8-9M20 18V5"/></svg><span>Role Glide</span></a>
-      <nav class="footer-links" aria-label="Footer"><a href="../#why">Why a side job</a><a href="../#earnings">Earnings</a><a href="../#how">How to start</a><a href="../#faq">FAQs</a><a href="../privacy-policy/">Privacy Policy</a></nav>
+      <a class="brand" href="/"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M5 19c7 12 23 12 30 0M8 25c7 10 17 10 24 0M12 31c5 5 11 5 16 0M12 9l8 9 8-9M20 18V5"/></svg><span>Role Glide</span></a>
+      <nav class="footer-links" aria-label="Footer"><a href="/#why">Why a side job</a><a href="/#earnings">Earnings</a><a href="/#how">How to start</a><a href="/#faq">FAQs</a><a href="/privacy-policy/">Privacy Policy</a></nav>
     </div>
     <div class="footer-bottom" id="preview-note">
       <p>© <span id="year">2026</span> Role Glide</p>

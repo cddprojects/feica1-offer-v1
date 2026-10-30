@@ -7,9 +7,9 @@
   <meta name="robots" content="noindex">
   <meta name="description" content="Earn money from home with part-time online work and a side job that fits around your day job. Remote work and freelance-style flexibility. Free to apply, open in all provinces and territories.">
   <title>Make Money Online From Home | Part-Time Remote Work in Canada | Role Glide</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
-  <script src="app.js" defer></script>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
 </head>
 <body data-page="home" id="top">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -31,7 +31,7 @@
       </div>
       <div class="hero-visual">
         <div class="photo-frame">
-          <img src="assets/home-work.webp" alt="An illustrative scene of a woman using a laptop at her dining table in a bright, welcoming home" fetchpriority="high" width="1536" height="1024">
+          <img src="/assets/home-work.webp" alt="An illustrative scene of a woman using a laptop at her dining table in a bright, welcoming home" fetchpriority="high" width="1536" height="1024">
           <span class="photo-label">Earn money from home.</span>
         </div>
         <div class="photo-caption"><span>REMOTE WORK · CANADA</span><span>YOUR SIDE JOB</span></div>
@@ -196,7 +196,7 @@
   <footer class="site-footer wrap">
     <div class="footer-top">
       <a class="brand" href="#top"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M5 19c7 12 23 12 30 0M8 25c7 10 17 10 24 0M12 31c5 5 11 5 16 0M12 9l8 9 8-9M20 18V5"/></svg><span>Role Glide</span></a>
-      <nav class="footer-links" aria-label="Footer"><a href="#why">Why a side job</a><a href="#earnings">Earnings</a><a href="#how">How to start</a><a href="#faq">FAQs</a><a href="privacy-policy/">Privacy Policy</a></nav>
+      <nav class="footer-links" aria-label="Footer"><a href="#why">Why a side job</a><a href="#earnings">Earnings</a><a href="#how">How to start</a><a href="#faq">FAQs</a><a href="/privacy-policy/">Privacy Policy</a></nav>
     </div>
     <div class="footer-bottom" id="preview-note">
       <p>© <span id="year">2026</span> Role Glide</p>
