@@ -5,25 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#182e3b">
   <meta name="robots" content="noindex">
-  <meta name="description" content="How WorkNest Canada collects, uses and protects your personal information.">
-  <title>Privacy Policy | WorkNest Canada</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
-  <script src="app.js" defer></script>
+  <meta name="description" content="How Role Glide collects, uses and protects your personal information.">
+  <title>Privacy Policy | Role Glide</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../app.js" defer></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header wrap">
-    <a class="brand" href="index.html" aria-label="WorkNest Canada home"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M5 19c7 12 23 12 30 0M8 25c7 10 17 10 24 0M12 31c5 5 11 5 16 0M12 9l8 9 8-9M20 18V5"/></svg><span>WorkNest<small>CANADA</small></span></a>
-    <nav id="site-nav" aria-label="Main navigation"><a href="index.html#why">Why a side job</a><a href="index.html#earnings">Earnings</a><a href="index.html#how">How to start</a><a href="index.html#faq">FAQs</a></nav>
-    <a class="button small" href="index.html#enquire">Apply now <span aria-hidden="true">↗</span></a>
+    <a class="brand" href="../" aria-label="Role Glide home"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M5 19c7 12 23 12 30 0M8 25c7 10 17 10 24 0M12 31c5 5 11 5 16 0M12 9l8 9 8-9M20 18V5"/></svg><span>Role Glide</span></a>
+    <nav id="site-nav" aria-label="Main navigation"><a href="../#why">Why a side job</a><a href="../#earnings">Earnings</a><a href="../#how">How to start</a><a href="../#faq">FAQs</a></nav>
+    <a class="button small" href="../#enquire">Apply now <span aria-hidden="true">↗</span></a>
   </header>
   <main id="main">
     <section class="legal wrap section-space" aria-labelledby="privacy-title">
       <p class="eyebrow">LEGAL</p>
       <h1 id="privacy-title">Privacy Policy</h1>
       <p class="legal-updated">Last updated: October 29, 2026</p>
-      <p>This policy explains how WorkNest Canada (“WorkNest”, “we”, “us”) collects, uses and protects your personal information when you use this website and submit our form. We handle personal information in line with Canada’s Personal Information Protection and Electronic Documents Act (PIPEDA) and any applicable provincial privacy law.</p>
+      <p>This policy explains how Role Glide (“we”, “us”) collects, uses and protects your personal information when you use this website and submit our form. We handle personal information in line with Canada’s Personal Information Protection and Electronic Documents Act (PIPEDA) and any applicable provincial privacy law.</p>
 
       <h2>1. What we collect</h2>
       <p>When you submit the form on this website, we collect:</p>
@@ -83,16 +83,16 @@
       <p>We may update this policy from time to time. The “last updated” date at the top shows when it last changed.</p>
 
       <h2>12. Contact us</h2>
-      <p>WorkNest Canada<br>General enquiries: <a href="mailto:info@worknest.ca">info@worknest.ca</a><br>Privacy requests: <a href="mailto:privacy@worknest.ca">privacy@worknest.ca</a></p>
+      <p>Role Glide<br>General enquiries: <a href="mailto:info@roleglide.com">info@roleglide.com</a><br>Privacy requests: <a href="mailto:privacy@roleglide.com">privacy@roleglide.com</a></p>
     </section>
   </main>
   <footer class="site-footer wrap">
     <div class="footer-top">
-      <a class="brand" href="index.html"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M5 19c7 12 23 12 30 0M8 25c7 10 17 10 24 0M12 31c5 5 11 5 16 0M12 9l8 9 8-9M20 18V5"/></svg><span>WorkNest<small>CANADA</small></span></a>
-      <nav class="footer-links" aria-label="Footer"><a href="index.html#why">Why a side job</a><a href="index.html#earnings">Earnings</a><a href="index.html#how">How to start</a><a href="index.html#faq">FAQs</a><a href="privacy.html">Privacy Policy</a></nav>
+      <a class="brand" href="../"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M5 19c7 12 23 12 30 0M8 25c7 10 17 10 24 0M12 31c5 5 11 5 16 0M12 9l8 9 8-9M20 18V5"/></svg><span>Role Glide</span></a>
+      <nav class="footer-links" aria-label="Footer"><a href="../#why">Why a side job</a><a href="../#earnings">Earnings</a><a href="../#how">How to start</a><a href="../#faq">FAQs</a><a href="../privacy-policy/">Privacy Policy</a></nav>
     </div>
     <div class="footer-bottom" id="preview-note">
-      <p>© <span id="year">2026</span> WorkNest Canada</p>
+      <p>© <span id="year">2026</span> Role Glide</p>
       <p>Earnings shown are examples only and are not a guarantee of income. Actual rates and hours are set by the hiring company and vary by role.</p>
       <a class="back-top" href="#top">Back to top <span aria-hidden="true">↑</span></a>
     </div>

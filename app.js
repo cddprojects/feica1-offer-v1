@@ -271,7 +271,7 @@ if (enquiryForm) {
       : 'Sorry, something went wrong and your details were not sent. Please try again in a moment.';
     result.hidden = false;
     if (ok) {
-      window.location.href = 'thank-you.html';
+      window.location.href = 'thank-you/';
       return;
     }
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -319,7 +319,7 @@ if (year) year.textContent = String(new Date().getFullYear());
     const hours = Number(slider.value);
     const weekly = rate * hours;
     out.textContent = hours + ' hours';
-    slider.style.setProperty('--pct', ((hours - slider.min) / (slider.max - slider.min) * 100) + '%');
+    slider.style.setProperty('--ratio', String((hours - slider.min) / (slider.max - slider.min)));
     total.textContent = formatCad(Math.round(weekly * 52 / 12));
     yearEl.textContent = 'Leave your evenings empty and that is ' + formatCad(weekly * 52) + ' a year you never see.';
   }

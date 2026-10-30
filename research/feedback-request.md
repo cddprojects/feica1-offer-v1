@@ -1,10 +1,10 @@
 # Feedback request for real applicants
 
-Send this only to people who have really applied or worked through WorkNest. Quote someone only with their written yes.
+Send this only to people who have really applied or worked through Role Glide. Quote someone only with their written yes.
 
 ## Message
 
-Hi [first name], thanks for applying to WorkNest Canada.
+Hi [first name], thanks for applying to Role Glide.
 
 Could you spare two minutes to tell us how it went? Good, bad or in between, we want the honest version.
 
